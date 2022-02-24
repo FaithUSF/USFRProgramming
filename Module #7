@@ -1,0 +1,43 @@
+>install.packages("pryr")
+> library(pryr)
+> Soccer <- function(name, sex, age, goals){
++   player <- list(name = name, sex = sex, data = data.frame(age = age, goals = goals))
++   class(player) <- "Soccer"
++   return(player)
++ }
+> S <- Soccer("Sara", "Female", 23, 4)
+> S
+$name
+[1] "Sara"
+
+$sex
+[1] "Female"
+
+$data
+  age goals
+1  23     4
+
+attr(,"class")
+[1] "Soccer"
+> otype(S)
+[1] "S3"
+> setClass("Player",
++          representation(
++            name = "character",
++            age = "numeric",
++            goals = "numeric"
++          ))
+> S <- new("Player", name = "Sara", age = 23, goals = 4)
+> S
+An object of class "Player"
+Slot "name":
+[1] "Sara"
+
+Slot "age":
+[1] 23
+
+Slot "goals":
+[1] 4
+
+> otype(S)
+[1] "S4"
