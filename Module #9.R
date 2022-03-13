@@ -1,0 +1,8 @@
+library(readr)
+root <- read.csv("secalonic.csv")
+str(root)
+plot(dose~rootl, data = root, main = "Dose vs Length", xlab = "Root Length", ylab = "Dose")
+barplot(root$rootl~root$dose, main = "Dose vs Length", xlab = "Dose", ylab = "Root Length")
+root2 <- c(root$dose, root$rootl)
+hist(root2, main = "Dose vs Length", col = "red")
+boxplot(rootl~dose, root, main = "Root Length vs Dose", xlab = "Dose", ylab = "Root Length")
