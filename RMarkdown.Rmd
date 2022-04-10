@@ -1,0 +1,16 @@
+---
+title: "Time Simplified"
+author: "Faith"
+date: "4/10/2022"
+output: html_document
+---
+Download the provided dataset from the website
+https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting?select=train.csv
+
+Load Data
+```{R}
+train <- read.csv("train.csv")
+data(train)
+head(train)
+```
+This is the dataset that I would like to use for my R package that is being created.  With this dataset I can determine the most popular months to travel, and make predictions on sales.  This package will work along side with the ggplot package to produce the necessary graphs for this data.  I am currently having trouble with creating my functions but they are slowly coming along.
